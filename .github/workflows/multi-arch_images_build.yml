@@ -31,4 +31,14 @@ jobs:
             goarch=amd64
           containerfiles: |
             ./Dockerfile
-     
+  
+      - name: Build image linux/ppc64le
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: ${{ env.IMAGE_NAME }}
+          tags: linux-ppc64le
+          arch: ppc64le
+          build-args: |
+            goarch=ppc64le
+          containerfiles: |
+            ./Dockerfile
