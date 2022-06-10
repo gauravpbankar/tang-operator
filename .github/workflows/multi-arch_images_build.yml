@@ -1,0 +1,37 @@
+.github/workflows/multi-arch_images_build.yml
+
+
+name: Multiarch build
+
+on:
+  push:
+
+env:
+  IMAGE_NAME: Tang-operator
+  IMAGE_TAG: multi-arch
+  IMAGE_REGISTRY: quay.iov
+  IMAGE_NAMESPACE: gauravbankar
+
+jobs:
+  build:
+    name: Build and push multi-arch image
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: add checkout action...
+        uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Build image linux/amd64
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: ${{ env.IMAGE_NAME }}
+          tags: linux-amd64
+          arch: amd64
+          build-args: |
+            goarch=amd64
+          containerfiles: |
+            ./Dockerfile
+     
