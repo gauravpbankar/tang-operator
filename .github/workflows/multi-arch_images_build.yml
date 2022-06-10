@@ -1,6 +1,3 @@
-.github/workflows/multi-arch_images_build.yml
-
-
 name: Multiarch build
 
 on:
