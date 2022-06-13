@@ -6,7 +6,7 @@ on:
 env:
   IMAGE_NAME: tang-operator-multi-arch
   IMAGE_TAG: multi-arch
-  IMAGE_REGISTRY: quay.iov
+  IMAGE_REGISTRY: quay.io
   IMAGE_NAMESPACE: gauravbankar
 
 jobs:
