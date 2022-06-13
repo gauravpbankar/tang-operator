@@ -4,10 +4,10 @@ on:
   push:
 
 env:
-  IMAGE_NAME: tang-operator-multi-arch
+  IMAGE_NAME: tang-operator
   IMAGE_TAG: multi-arch
   IMAGE_REGISTRY: quay.io
-  IMAGE_NAMESPACE: gauravbankar
+  IMAGE_NAMESPACE: sec-eng-special
 
 jobs:
   build:
